@@ -8,11 +8,16 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends \
         git \
         build-essential \
+        clang clang-format \
         pkg-config \
         cmake \
         libgtest-dev \
         valgrind \
-        clang-format \
         libpcsclite-dev && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists
+
+# Build GTest library
+RUN cd /usr/src/googletest && \
+    cmake . && \
+    cmake --build . --target install
