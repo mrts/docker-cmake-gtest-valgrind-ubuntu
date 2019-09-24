@@ -8,7 +8,7 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends \
         git \
         build-essential \
-        clang-8 clang-format-8q  \
+        clang-8 clang-format-8 \
         pkg-config \
         cmake \
         libgtest-dev \
